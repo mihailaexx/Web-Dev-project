@@ -1,10 +1,10 @@
-# Project theme:
+# 📃Project theme:
 
-Shop
+🛒 Shop
 
 ---
 
-# Our team:
+# 🫂Our team:
 
 ---
 
