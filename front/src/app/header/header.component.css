@@ -1,0 +1,11 @@
+.header-container {
+  padding: 8px 0 16px;
+  background: linear-gradient(#6f01fb -7.07999%, #ff49d7 100%),
+  linear-gradient(#d9d9d9, #d9d9d9);
+}
+
+.header {
+  max-width: 1054px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
