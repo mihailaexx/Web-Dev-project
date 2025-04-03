@@ -8,3 +8,24 @@ body {
   font-family: Hauss, Segoe UI, -apple-system, Roboto, Helvetica Neue, Noto Sans, Arial, sans-serif,
   Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
+
+body * {
+  font-family: inherit;
+}
+
+button, input {
+  border: none;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,  input:hover {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
