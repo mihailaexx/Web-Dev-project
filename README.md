@@ -1,6 +1,6 @@
 # 📃Project theme:
 
-🛒 Shop
+🛒 Marketplace
 
 # 🫂Our team:
 
