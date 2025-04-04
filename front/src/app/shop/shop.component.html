@@ -1,7 +1,14 @@
-<div class="card">
-  <div class="card-image">
-    <img [ngSrc]="images[currentImageIndex]" width="100" height="100"
+<div class="main">
+  <div class="card">
+    <button (click)="prevSlide()" class="banner-button" style="left: 20px">
+      <img src="arrow.svg" alt="arrow" style="rotate: -90deg">
+    </button>
+    <img [ngSrc]="images[currentImageIndex]" alt="banner"
+         fill
          (mouseover)="stopSlideshow()"
          (mouseleave)="startSlideshow()"/>
+    <button (click)="nextSlide()" class="banner-button" style="right: 20px">
+      <img src="arrow.svg" alt="arrow" style="rotate: 90deg">
+    </button>
   </div>
 </div>

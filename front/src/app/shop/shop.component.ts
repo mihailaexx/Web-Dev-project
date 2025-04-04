@@ -12,11 +12,12 @@ export class ShopComponent implements OnInit, OnDestroy {
   currentImageIndex = 0
   private intervalId: any
   images: string[] = [
-    'IMG_6435-1.jpg',
-    'IMG_7960.jpg',
-    'IMG_8074.jpg',
-    'IMG_8198.jpg',
-    'IMG_8202.jpg',
+    'banner/1.webp',
+    'banner/2.webp',
+    'banner/3.webp',
+    'banner/4.webp',
+    'banner/5.webp',
+    'banner/6.webp',
   ];
 
   ngOnInit() {
@@ -31,10 +32,14 @@ export class ShopComponent implements OnInit, OnDestroy {
     this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
   }
 
+  prevSlide() {
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+  }
+
   startSlideshow() {
     this.intervalId = setInterval(() => {
       this.nextSlide();
-    }, 3000);
+    }, 10000);
   }
 
   stopSlideshow() {

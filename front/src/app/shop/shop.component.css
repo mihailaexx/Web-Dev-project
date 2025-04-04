@@ -1,10 +1,35 @@
-.card {
-  width: 500px;
-  height: 300px;
+.main {
+  max-width: 89%;
+  margin: 0 auto;
+  padding: 24px 32px 48px;
+
 }
 
-.card-image {
+.card {
   display: flex;
   justify-content: center;
+  height: 168px;
+  border-radius: 16px;
+}
+
+.card img {
+  border-radius: 16px;
+}
+
+
+.banner-button {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(255,255,255,0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.banner-button img {
+  width: 10px;
+  height: 10px;
 }
