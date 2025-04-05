@@ -1,7 +1,8 @@
 <header class="header">
   <div class="header-container">
     <div class="header-top">
-        <button class="header-top-address-button clear-button" type="button">
+        <button class="header-top-address-button clear-button" type="button"
+                (click)="true">
           <img src="header/point.svg" alt="address"/>
           Алматы, улица Толе би, д. 59, кв. 136
         </button>
@@ -10,38 +11,40 @@
       <a [href]="['']">
         <img src="logoWb.svg" alt="logo icon" class="header-bottom-logo"/>
       </a>
-      <button class="header-bottom-button">
+      <button class="header-bottom-button" type="button"
+              (click)="true">
         <img src="header/category.svg" alt="category icon"/>
       </button>
       <div class="header-bottom-input-container">
         <input autocomplete="off" class="header-bottom-input"
                type="search" placeholder="Найти на Wildberries">
-        <button class="header-bottom-input-button">
+        <button class="header-bottom-input-button" type="button"
+                (click)="true">
           <img src="header/search.svg" alt="search icon"/>
         </button>
       </div>
       <div>
         <ul class="header-bottom-profile-section flex">
           <li>
-            <a [href]="['']">
+            <a [href]="['/profile/orders']">
               <img src="header/deliveries.svg" alt="deliveries icon"/>
               <span>Доставки</span>
             </a>
           </li>
           <li>
-            <a [href]="['']">
+            <a [href]="['/profile/favorites']">
               <img src="header/likes.svg" alt="likes icon"/>
               <span>Избранное</span>
             </a>
           </li>
           <li>
-            <a [href]="['']" (click)="true">
+            <a [href]="['/profile']" (click)="true">
               <img src="header/profile.svg" alt="profile icon"/>
               <span>Профиль</span>
             </a>
           </li>
           <li>
-            <a [href]="['']">
+            <a [href]="['/profile/basket']">
               <img src="header/cart.svg" alt="cart icon"/>
               <span>Корзина</span>
             </a>

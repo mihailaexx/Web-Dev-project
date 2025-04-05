@@ -1,18 +1,20 @@
-<div class="main-container">
-  <div class="banner">
-    <button (click)="prevSlide()" style="left: 20px">
-      <img src="banner/arrow.svg" alt="arrow" style="rotate: -90deg">
-    </button>
-    <img [ngSrc]="images[currentImageIndex]" alt="banner"
-         fill
-         (mouseover)="stopSlideshow()"
-         (mouseleave)="startSlideshow()"
-    />
-    <button (click)="nextSlide()" style="right: 20px">
-      <img src="banner/arrow.svg" alt="arrow" style="rotate: 90deg">
-    </button>
-  </div>
-  <div class="cards-grid">
-    <app-productcard></app-productcard>
-  </div>
+<div class="main">
+  <main class="main-container">
+    <div class="banner">
+      <button (click)="prevSlide()" style="left: 20px">
+        <img src="banner/arrow.svg" alt="arrow" style="rotate: -90deg">
+      </button>
+      <img [ngSrc]="images[currentImageIndex]" alt="banner"
+           fill
+           (mouseover)="stopSlideshow()"
+           (mouseleave)="startSlideshow()"
+      />
+      <button (click)="nextSlide()" style="right: 20px">
+        <img src="banner/arrow.svg" alt="arrow" style="rotate: 90deg">
+      </button>
+    </div>
+    <div class="cards-grid">
+      <app-productcard></app-productcard>
+    </div>
+  </main>
 </div>

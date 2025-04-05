@@ -1,9 +1,10 @@
 import {Routes} from '@angular/router';
 import {ShopComponent} from './shop/shop.component';
 import {ProductdetailComponent} from './productdetail/productdetail.component';
+import {OrdersComponent} from './orders/orders.component';
+import {FavoritesComponent} from './favorites/favorites.component';
 import {ProfileComponent} from './profile/profile.component';
-import {CartComponent} from './cart/cart.component';
-import {LikeComponent} from './like/like.component';
+import {BasketComponent} from './basket/basket.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 
@@ -14,9 +15,19 @@ export const routes: Routes = [
     title: 'Final project site',
   },
   {
-    path: 'shop/p/:slug',
+    path: 'shop/p/:slug/',
     component: ProductdetailComponent,
     title: 'Buy :slug',
+  },
+  {
+    path: 'profile/orders',
+    component: OrdersComponent,
+    title: 'Orders',
+  },
+  {
+    path: 'profile/favorites',
+    component: FavoritesComponent,
+    title: 'Likes',
   },
   {
     path: 'profile',
@@ -25,13 +36,8 @@ export const routes: Routes = [
   },
   {
     path: 'profile/basket',
-    component: CartComponent,
+    component: BasketComponent,
     title: 'Basket',
-  },
-  {
-    path: 'profile/likes',
-    component: LikeComponent,
-    title: 'Likes',
   },
   {
     path: 'login',
