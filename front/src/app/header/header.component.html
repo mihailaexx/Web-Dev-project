@@ -22,22 +22,30 @@
       </div>
       <div>
         <ul class="header-bottom-profile-section flex">
-          <a [href]="['']"><li>
+          <li>
+            <a [href]="['']">
               <img src="header/deliveries.svg" alt="deliveries icon"/>
               <span>Доставки</span>
-            </li></a>
-          <a [href]="['']"><li>
-            <img src="header/likes.svg"/>
-            <span>Избранное</span>
-          </li></a>
-          <button type="button" class="clear-button"><li>
-            <img src="header/profile.svg" alt="profile icon"/>
-            <span>Профиль</span>
-          </li></button>
-          <a [href]="['']"><li>
+            </a>
+          </li>
+          <li>
+            <a [href]="['']">
+              <img src="header/likes.svg" alt="likes icon"/>
+              <span>Избранное</span>
+            </a>
+          </li>
+          <li>
+            <a [href]="['']" (click)="true">
+              <img src="header/profile.svg" alt="profile icon"/>
+              <span>Профиль</span>
+            </a>
+          </li>
+          <li>
+            <a [href]="['']">
               <img src="header/cart.svg" alt="cart icon"/>
               <span>Корзина</span>
-          </li></a>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

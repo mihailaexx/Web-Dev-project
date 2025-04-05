@@ -122,15 +122,19 @@
   font-size: 14px;
 }
 
-.header-bottom-profile-section a, .header-bottom-profile-section button {
+.header-bottom-profile-section li {
   margin-left: 24px;
 }
 
-.header-bottom-profile-section a li, .header-bottom-profile-section button li {
+.header-bottom-profile-section li a {
   color: rgba(255, 255, 255, .6);
 }
 
-.header-bottom-profile-section a li img, .header-bottom-profile-section button li img {
+.header-bottom-profile-section li a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.header-bottom-profile-section li a img {
   width: 24px;
   height: 24px;
   margin: 0 auto 6px;

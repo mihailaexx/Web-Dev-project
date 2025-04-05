@@ -1,11 +1,69 @@
 .footer {
-  color: #242424;
+  color: #868695;
   background-color: rgba(211, 212, 221, .24);
   padding: 40px 0 72px;
+  font-size: 14px;
 }
 
 .footer-container {
   max-width: 89%;
   margin: 0 auto;
   padding: 0 32px;
+}
+
+
+.services {
+  display: flex;
+  flex-direction: row;
+  white-space: normal;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.services li ul li {
+  margin-bottom: 8px;
+}
+
+.services h2 {
+  font-size: 14px;
+  font-weight: 650;
+  margin-bottom: 8px;
+  cursor: default;
+  color: #242424;
+}
+
+.services li a:hover, #legalinfo:hover, #driveinfo:hover, #courierinfo:hover {
+  color: #a73afd;
+}
+
+.rights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.qr {
+  max-width: 150px;
+  height: auto;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.socials div {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.socials div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

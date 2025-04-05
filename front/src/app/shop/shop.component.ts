@@ -10,8 +10,8 @@ import {ProductcardComponent} from '../productcard/productcard.component';
 })
 
 export class ShopComponent implements OnInit, OnDestroy {
-  currentImageIndex = 0
-  private intervalId: any
+  currentImageIndex = 0;
+  private intervalId: any;
   images: string[] = [
     'banner/1.webp',
     'banner/2.webp',

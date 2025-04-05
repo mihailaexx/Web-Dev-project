@@ -1,5 +1,132 @@
 <div class="footer">
   <div class="footer-container">
-
+    <div>
+      <ul class="services">
+        <li>
+          <ul style="width: 180px">
+            <li>
+              <h2>Покупателям</h2>
+            </li>
+            <li>
+              <a href="https://www.wildberries.ru/services/voprosy-i-otvety">Вопросы и ответы</a>
+            </li>
+            <li>
+              <a (click)="toggleLegalInfo()" id="legalinfo">Юридическая информация</a>
+            </li>
+            <div *ngIf="legalinfo">
+              <li>
+                <a href="https://legal.wildberries.ru/rules-for-selling-goods/country/kz/lang/ru/">Правила продажи</a>
+              </li>
+              <li>
+                <a href="https://legal.wildberries.ru/consumers-offer/country/kz/lang/ru/">Правила пользования торговой площадкой</a>
+              </li>
+              <li>
+                <a href="https://legal.wildberries.ru/privacypolicy/country/kz/lang/ru/">Политика обработки персональных данных</a>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <h2>Продавцам и партнёрам</h2>
+            </li>
+            <li>
+              <a href="https://seller.wildberries.ru/">Продавать товары</a>
+            </li>
+            <li>
+              <a href="https://point-promo.wb.ru/">Открыть пункт выдачи</a>
+            </li>
+            <li>
+              <a href="https://rent.wildberries.ru/promo/">Предложить помещение</a>
+            </li>
+            <li>
+              <a (click)="toggleDriveInfo()" id="driveinfo">Развозить грузы</a>
+            </li>
+            <li *ngIf="driveinfo">
+              <a href="https://www.wildberries.ru/promo/priglashaem-k-sotrudnichestvu">WB Drive</a>
+            </li>
+            <li>
+              <a (click)="toggleCourierInfo()" id="courierinfo">Доставлять заказы</a>
+            </li>
+            <li *ngIf="courierinfo">
+              <a href="https://wbk.wb.ru/">WB Courier</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <h2>Наши проекты</h2>
+            </li>
+            <li>
+              <a href="https://guru.wildberries.ru/?utm_source=main_footer">WB Guru</a>
+            </li>
+            <li>
+              <a href="https://www.wildberries.ru/promo/wb-stream">WB Stream</a>
+            </li>
+            <li>
+              <a href="https://track.wildberries.ru/">WB Track</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <h2>Компания</h2>
+            </li>
+            <li>
+              <a href="https://www.wildberries.ru/services/o-nas">О нас</a>
+            </li>
+            <li>
+              <a href="https://www.wildberries.ru/presservice">Пресс-служба</a>
+            </li>
+            <li>
+              <a href="https://www.wildberries.ru/services/kontakty">Контакты</a>
+            </li>
+            <li>
+              <a href="https://vsemrabota.ru/">Вакансии</a>
+            </li>
+            <li>
+              <a href="https://www.wildberries.ru/services/hotline">Сообщить о мошенничестве</a>
+            </li>
+          </ul>
+        </li>
+        <div class="qr">
+          <img src="footer/qr.svg" alt="qr"/>
+        </div>
+      </ul>
+      <div class="rights">
+        <div>
+          <span>© Wildberries 2004–2025. Все права защищены.</span><br>
+          <span>
+        Применяются <a href="https://legal.wildberries.ru/rules-for-the-use-of-recommendation-technologies/country/ru/lang/ru/"
+                       style="border-bottom: 1px dashed">рекомендательные технологии</a>
+        </span>
+        </div>
+        <div class="socials">
+          <div>
+            <a href="http://vk.com/club9695053">
+              <img src="footer/vk.svg" alt="vkontakte logo">
+            </a>
+          </div>
+          <div>
+            <a href="http://www.odnoklassniki.ru/wildberries">
+              <img src="footer/ok.svg" alt="odnoklassniki logo">
+            </a>
+          </div>
+          <div>
+            <a href="https://www.wildberries.ru/presservice#tg">
+              <img src="footer/tg.svg" alt="telegram logo">
+            </a>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/@wb_online/featured">
+              <img src="footer/yt.svg" alt="youtube logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
