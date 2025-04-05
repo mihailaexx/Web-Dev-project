@@ -1,9 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
+import {ProductcardComponent} from '../productcard/productcard.component';
 
 @Component({
   selector: 'app-shop',
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, ProductcardComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
@@ -21,11 +22,13 @@ export class ShopComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit() {
-    this.startSlideshow()
+    // this.startSlideshow()
+    document.addEventListener('visibilitychange', this.handleVisibilityChange);
   }
 
   ngOnDestroy() {
-    this.stopSlideshow()
+    // this.stopSlideshow()
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
   }
 
   nextSlide() {
@@ -45,4 +48,13 @@ export class ShopComponent implements OnInit, OnDestroy {
   stopSlideshow() {
     clearInterval(this.intervalId);
   }
+
+
+  private handleVisibilityChange = () => {
+    if (document.hidden) {
+      this.stopSlideshow();
+    } else {
+      this.startSlideshow();
+    }
+  };
 }

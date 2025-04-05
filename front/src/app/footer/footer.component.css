@@ -1,0 +1,11 @@
+.footer {
+  color: #242424;
+  background-color: rgba(211, 212, 221, .24);
+  padding: 40px 0 72px;
+}
+
+.footer-container {
+  max-width: 89%;
+  margin: 0 auto;
+  padding: 0 32px;
+}

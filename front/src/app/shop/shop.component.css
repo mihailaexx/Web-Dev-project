@@ -1,23 +1,24 @@
-.main {
+.main-container {
   max-width: 89%;
   margin: 0 auto;
   padding: 24px 32px 48px;
-
 }
 
-.card {
+.banner {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 168px;
   border-radius: 16px;
+  margin-bottom: 29px;
 }
 
-.card img {
+.banner img {
   border-radius: 16px;
 }
 
-
-.banner-button {
+.banner button {
   position: absolute;
   z-index: 2;
   background-color: rgba(255,255,255,0.5);
@@ -29,7 +30,15 @@
   justify-content: center;
 }
 
-.banner-button img {
+.banner button img {
   width: 10px;
   height: 10px;
+}
+
+
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, calc(16.6667% - 25px));
+  gap: 30px;
 }

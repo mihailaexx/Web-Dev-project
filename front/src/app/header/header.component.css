@@ -14,13 +14,13 @@
 
 
 
-.header-container {
+.header {
   padding: 8px 0 16px;
   background: linear-gradient(#6f01fb -7.07999%, #ff49d7 100%),
   linear-gradient(#d9d9d9, #d9d9d9);
 }
 
-.header-container-fixed {
+.header-fixed {
   position: fixed;
   left: 0;
   right: 0;
@@ -28,7 +28,7 @@
   z-index: 1000;
 }
 
-.header {
+.header-container {
   max-width: 89%;
   margin: 0 auto;
   padding: 0 32px;
@@ -42,9 +42,15 @@
 
 .header-top-address-button {
   color: rgba(255, 255, 255, .6);
-  padding: 0;
+  position: relative;
+  padding: 0 0 0 20px;
 }
 
+.header-top-address-button img {
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
 
 
 
