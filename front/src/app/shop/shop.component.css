@@ -39,10 +39,31 @@
   height: 10px;
 }
 
-
-
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(6, calc(16.6667% - 25px));
-  gap: 30px;
+  grid-template-columns: repeat(2, calc(50% - 4px));
+  gap: 24px 8px;
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, calc(25% - 6px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    row-gap: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cards-grid {
+    grid-template-columns: repeat(6, calc(16.6667% - 25px));
+    column-gap: 30px;
+  }
+}
+
+.cards-grid {
+
 }

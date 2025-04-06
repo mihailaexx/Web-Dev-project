@@ -1,0 +1,135 @@
+.product-card {
+}
+
+.card-top {
+  position: relative;
+}
+
+.card-top-img {
+  border-radius: 12px;
+  width: 100%;
+}
+
+.card-top-like {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  background-color: transparent;
+}
+.card-top-like:hover {
+  background-color: #a73afd;
+  border-radius: 50%;
+}
+
+.cart-top-discount {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #f44;
+  color: #fff;
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 6px;
+  font-weight: 650;
+}
+
+.card-middle {
+  margin-top: 12px;
+}
+
+.card-middle-price {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.card-middle-price-current {
+  color: #f44;
+  font-size: 18px;
+  font-weight: 650;
+  margin-right: 8px;
+}
+
+.card-middle-price-old {
+  font-size: 14px;
+}
+
+.card-middle-count {
+  margin-bottom: 6px;
+}
+
+.card-middle-count-value {
+  font-size: 12px;
+  color: #242424;
+}
+
+.card-middle-count-progress {
+  border-radius: 4px;
+  height: 6px;
+  background: #242424;
+}
+
+.card-middle-count-progress-fill {
+  background: linear-gradient(90deg, #f44 0%, #ffaa5c 105.56%);
+  border-radius: 4px;
+  height: 6px;
+}
+
+.card-middle-title {
+  font-size: 14px;
+}
+
+.card-middle-title-brand {
+  color: #242424;
+}
+
+.card-middle-title-name {
+  color: #9d9da5;
+}
+
+.card-bottom {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.card-bottom-raiting {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-bottom-raiting-stars {
+  color: #242424;
+  margin-right: 3px;
+}
+
+.card-bottom-raiting-count {
+  color: #9d9da5;
+}
+
+.card-bottom-order {
+  margin-top: 8px;
+}
+
+.card-bottom-order-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a73afd;
+  width: 100%;
+  gap: 8px;
+  padding: 3px 5px 5px;
+  margin-top: 30px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .card-bottom-order-button {
+    padding: 5px 24px 7px;
+  }
+}

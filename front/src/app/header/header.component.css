@@ -89,12 +89,15 @@
   margin: 0 auto;
 }
 
-.header-bottom-button:hover {
-
-}
-
-.header-bottom-button:active {
-
+.header-categories {
+  position: absolute;
+  width: 312px;
+  height: 100%;
+  padding: 24px 0 24px 32px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 10;
 }
 
 .header-bottom-input-container {

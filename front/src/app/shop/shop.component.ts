@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {ProductcardComponent} from '../productcard/productcard.component';
 
 @Component({
   selector: 'app-shop',
-  imports: [NgOptimizedImage, ProductcardComponent],
+  imports: [CommonModule, ProductcardComponent, NgOptimizedImage],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
