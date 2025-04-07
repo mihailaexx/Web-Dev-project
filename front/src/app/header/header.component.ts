@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {CategoriesoffcanvasService} from '../categoriesoffcanvas.service';
 
 @Component({
   selector: 'app-header',
@@ -9,4 +10,5 @@ import { CommonModule } from '@angular/common';
 })
 
 export class HeaderComponent {
+  protected readonly CategoriesoffcanvasService = inject(CategoriesoffcanvasService);
 }

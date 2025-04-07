@@ -90,14 +90,34 @@
 }
 
 .header-categories {
-  position: absolute;
+  position: fixed;
   width: 312px;
-  height: 100%;
-  padding: 24px 0 24px 32px;
-  top: 0;
+  height: calc(100% - 115px);
+  padding: 24px 18px 24px 32px;
+  top: 115px;
   left: 0;
   background: #fff;
-  z-index: 10;
+  z-index: 3;
+  overflow-y: scroll;
+}
+
+.overlay {
+  position: fixed;
+  top: 115px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 115px);
+  background-color: #242424;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+
+.header-categories ul li a {
+  color: #242424;
+  padding: 12px 52px 14px;
+  font-size: 16px;
+  display: block;
 }
 
 .header-bottom-input-container {
@@ -136,10 +156,12 @@
 
 .header-bottom-profile-section li {
   margin-left: 24px;
+  height: 50px;
 }
 
 .header-bottom-profile-section li a {
   color: rgba(255, 255, 255, .6);
+  height: 50px;
 }
 
 .header-bottom-profile-section li a:hover {

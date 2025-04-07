@@ -12,11 +12,25 @@
         <img src="logoWb.svg" alt="logo icon" class="header-bottom-logo"/>
       </a>
       <button class="header-bottom-button" type="button"
-              (click)="true">
+              (click)="CategoriesoffcanvasService.toggleCategories()">
         <img src="header/category.svg" alt="category icon"/>
       </button>
-      <div class="header-categories">
-
+      <div class="header-categories"
+           *ngIf="CategoriesoffcanvasService.isCategoriesOpen">
+        <ul>
+          <li>
+            <a href="">123</a>
+          </li>
+          <li>
+            <a href="">456</a>
+          </li>
+          <li>
+            <a href="">789</a>
+          </li>
+        </ul>
+      </div>
+      <div id="header-categories-overlay"
+           (click)="CategoriesoffcanvasService.toggleCategories()">
       </div>
       <div class="header-bottom-input-container">
         <input autocomplete="off" class="header-bottom-input"
@@ -41,7 +55,9 @@
             </a>
           </li>
           <li>
-            <a [href]="['/profile']" (click)="true">
+            <a [href]="['/profile']"
+               (mouseover)="true"
+               (mouseleave)="true">
               <img src="header/profile.svg" alt="profile icon"/>
               <span>Профиль</span>
             </a>

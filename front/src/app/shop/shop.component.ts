@@ -20,6 +20,7 @@ export class ShopComponent implements OnInit, OnDestroy {
     'banner/5.webp',
     'banner/6.webp',
   ];
+  isBannerButtonsHover: boolean = false;
 
   ngOnInit() {
     // this.startSlideshow()
@@ -49,6 +50,13 @@ export class ShopComponent implements OnInit, OnDestroy {
     clearInterval(this.intervalId);
   }
 
+  showBannerButtons() {
+    this.isBannerButtonsHover = true;
+  }
+
+  hideBannerButtons() {
+    this.isBannerButtonsHover = false;
+  }
 
   private handleVisibilityChange = () => {
     if (document.hidden) {

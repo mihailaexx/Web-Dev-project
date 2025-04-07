@@ -1,4 +1,4 @@
-<div class="footer">
+<div id="footer">
   <div class="footer-container">
     <div>
       <ul class="services">
@@ -11,7 +11,10 @@
               <a href="https://www.wildberries.ru/services/voprosy-i-otvety">Вопросы и ответы</a>
             </li>
             <li>
-              <a (click)="toggleLegalInfo()" id="legalinfo">Юридическая информация</a>
+              <a id="legalinfo"
+                 (click)="toggleLegalInfo()">
+                Юридическая информация
+              </a>
             </li>
             <div *ngIf="legalinfo">
               <li>
@@ -41,13 +44,19 @@
               <a href="https://rent.wildberries.ru/promo/">Предложить помещение</a>
             </li>
             <li>
-              <a (click)="toggleDriveInfo()" id="driveinfo">Развозить грузы</a>
+              <a id="driveinfo"
+                 (click)="toggleDriveInfo()">
+                Развозить грузы
+              </a>
             </li>
             <li *ngIf="driveinfo">
               <a href="https://www.wildberries.ru/promo/priglashaem-k-sotrudnichestvu">WB Drive</a>
             </li>
             <li>
-              <a (click)="toggleCourierInfo()" id="courierinfo">Доставлять заказы</a>
+              <a id="courierinfo"
+                 (click)="toggleCourierInfo()">
+                Доставлять заказы
+              </a>
             </li>
             <li *ngIf="courierinfo">
               <a href="https://wbk.wb.ru/">WB Courier</a>
