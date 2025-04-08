@@ -1,4 +1,14 @@
 .product-card {
+  position: relative;
+}
+
+.product-card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .card-top {
@@ -11,16 +21,18 @@
 }
 
 .card-top-like {
-  display: flex;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
   padding: 0;
   background-color: transparent;
+  z-index: 3;
 }
 .card-top-like:hover {
   background-color: #a73afd;
-  border-radius: 50%;
+  border-radius: 12px;
 }
 
 .cart-top-discount {
@@ -33,6 +45,7 @@
   padding: 1px 4px;
   border-radius: 6px;
   font-weight: 650;
+  z-index: 3;
 }
 
 .card-middle {
@@ -126,6 +139,7 @@
   font-size: 14px;
   font-weight: 650;
   color: #fff;
+  z-index: 3;
 }
 
 @media (min-width: 1024px) {

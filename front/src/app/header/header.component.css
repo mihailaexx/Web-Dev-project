@@ -16,7 +16,7 @@
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 5;
 }
 
 .header-container {
@@ -97,7 +97,7 @@
   top: 115px;
   left: 0;
   background: #fff;
-  z-index: 3;
+  z-index: 5;
   overflow-y: scroll;
 }
 
@@ -109,7 +109,7 @@
   height: calc(100% - 115px);
   background-color: #242424;
   opacity: 0.5;
-  z-index: 2;
+  z-index: 4;
 }
 
 

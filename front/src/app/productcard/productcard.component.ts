@@ -9,4 +9,5 @@ import {CommonModule} from '@angular/common';
 })
 export class ProductcardComponent {
 
+  protected readonly console = console;
 }

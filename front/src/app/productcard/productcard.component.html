@@ -1,8 +1,13 @@
 <div class="product-card">
+  <a [href]="['/profile']"
+     class="product-card-link">
+  </a>
   <div class="card-top">
-    <img [src]="'productcard/card-photo.webp'" [alt]="'product photo'"
+    <img [src]="'productcard/card-photo.webp'"
+         [alt]="'product photo'"
          class="card-top-img"/>
-    <button class="card-top-like">
+    <button class="card-top-like"
+            (click)="true">
       <img src="productcard/like.svg" alt="like icon">
     </button>
     <div class="cart-top-discount" *ngIf="true">
@@ -33,7 +38,8 @@
       <span class="card-bottom-raiting-count">• 35000 оценок</span>
     </div>
     <div class="card-bottom-order">
-      <button class="card-bottom-order-button">
+      <button class="card-bottom-order-button"
+              (click)="true">
         <img src="productcard/cart.svg" alt="order icon">
         <span>Купить</span>
       </button>
