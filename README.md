@@ -4,8 +4,8 @@
 
 # 🫂Our team:
 
-Bulushev Mikhal 23B031079
+Bulushev Mikhail 23B031079
 
 Kanat Aliya 23B031517
 
-Roganskay Sofia 23B031411
+Roganskaya Sofya 23B031411
