@@ -33,7 +33,7 @@ class CategoryDetailsView(APIView):
 
     def put(self, request, cat_id):
         category = self.get_object(cat_id)
-        serializer = CategorySerializer(instance=category, data=request.data)
+        serializer = CategorySerializer(category, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)

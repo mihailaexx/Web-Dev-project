@@ -135,3 +135,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
 ]
+
+MEDIA_ROOT = "C:/Users/frosh/Desktop/UNIVERSITY/sem4/web/finalproject/front/public/"
