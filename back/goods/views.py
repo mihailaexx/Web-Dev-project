@@ -20,40 +20,40 @@ class CategoryListView(APIView):
 
 
 class CategoryDetailsView(APIView):
-    def get_object(self, cat_id):
+    def get_object(self, cat_slug):
         try:
-            return Category.objects.get(pk=cat_id)
+            return Category.objects.get(slug=cat_slug)
         except Category.DoesNotExist as e:
             return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
-    def get(self, request, cat_id):
-        category = self.get_object(cat_id)
+    def get(self, request, cat_slug):
+        category = self.get_object(cat_slug)
         serializer = CategorySerializer(category)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def put(self, request, cat_id):
-        category = self.get_object(cat_id)
+    def put(self, request, cat_slug):
+        category = self.get_object(cat_slug)
         serializer = CategorySerializer(category, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, cat_id):
-        category = self.get_object(cat_id)
+    def delete(self, request, cat_slug):
+        category = self.get_object(cat_slug)
         category.delete()
         return Response({"message": "Category was deleted"})
 
 
 class CategoryProductsListView(APIView):
-    def get_object(self, cat_id):
+    def get_object(self, cat_slug):
         try:
-            return Category.objects.get(pk=cat_id)
+            return Category.objects.get(slug=cat_slug)
         except Category.DoesNotExist as e:
             return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
-    def get(self, request, cat_id):
-        category = self.get_object(cat_id)
+    def get(self, request, cat_slug):
+        category = self.get_object(cat_slug)
         products = category.products.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

@@ -1,0 +1,26 @@
+<div id="main">
+  <main class="main-container">
+    <div class="banner">
+      <button (click)="bannerService.prevSlide()"
+              *ngIf="bannerService.isBannerButtonsHover"
+              (mouseover)="bannerService.stopSlideshow(); bannerService.showBannerButtons()"
+              style="left: 20px">
+        <img src="banner/arrow.svg" alt="arrow" style="rotate: -90deg">
+      </button>
+      <img [ngSrc]="bannerService.images[bannerService.currentImageIndex]" alt="banner"
+           fill
+           (mouseover)="bannerService.stopSlideshow(); bannerService.showBannerButtons()"
+           (mouseleave)="bannerService.startSlideshow(); bannerService.hideBannerButtons()"
+      />
+      <button (click)="bannerService.nextSlide()"
+              *ngIf="bannerService.isBannerButtonsHover"
+              (mouseover)="bannerService.stopSlideshow(); bannerService.showBannerButtons()"
+              style="right: 20px">
+        <img src="banner/arrow.svg" alt="arrow" style="rotate: 90deg">
+      </button>
+    </div>
+    <div class="cards-grid">
+      <app-productcard *ngFor="let product of products" [product]="product"></app-productcard>
+    </div>
+  </main>
+</div>

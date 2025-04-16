@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './productdetail.component.html',
   styleUrl: './productdetail.component.css'
 })
+
 export class ProductdetailComponent {
+  title = 'Product Detail';
 
 }

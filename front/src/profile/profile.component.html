@@ -1,0 +1,127 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #category let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Добавить категорию</h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>Название категории</label>
+        <input type="text" id="category-name" name="category-name" class="form-control" placeholder="Название категории">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #product let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Добавить категорию</h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>Название продукта</label>
+        <input type="text" id="product-name" name="category-name" class="form-control" placeholder="Название категории">
+      </div>
+      <div class="form-group">
+        <label>Описание продукта</label>
+        <input type="text" id="product-description" name="category-name" class="form-control" placeholder="Название категории">
+      </div>
+      <div class="form-group">
+        <label>Фото продукта</label>
+        <input type="image" id="product-image" name="category-name" class="form-control" placeholder="Название категории" alt="product image">
+      </div>
+      <div class="form-group">
+        <label>Количество продукта</label>
+        <input type="text" id="product-amount" name="category-name" class="form-control" placeholder="Название категории">
+      </div>
+      <div class="form-group">
+        <label>Цена продукта</label>
+        <input type="text" id="product-price" name="category-name" class="form-control" placeholder="Название категории">
+      </div>
+      <div class="form-group">
+        <label>Скидка продукта</label>
+        <input type="text" id="product-discount" name="category-name" class="form-control" placeholder="Название категории">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<div class="profile-page">
+
+  <div class="profile-container">
+    <h1>Профиль пользователя</h1>
+    <div class="profile-sections">
+      <a class="profile-section"
+         [routerLink]="['/profile/orders']">
+        <div>
+          <img src="profile/orders.svg" alt="orders icon">
+          <span>Мои заказы</span>
+        </div>
+      </a>
+      <a class="profile-section"
+         [routerLink]="['/profile/favorites']">
+        <div>
+          <img src="profile/likes.svg" alt="favorites icon">
+          <span>Избранное</span>
+        </div>
+      </a>
+      <a class="profile-section"
+         [routerLink]="['/profile/basket']">
+        <div>
+          <img src="profile/cart.svg" alt="basket icon">
+          <span>Корзина</span>
+        </div>
+      </a>
+      <button class="profile-section mb-2 me-2"
+              (click)="openVerticallyCentered(content)">
+        <img src="profile/setting.svg" alt="edit icon"> <!-- full name, email, phone, address -->
+        <span>Редактировать профиль</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <h1>Профиль Администратора</h1>
+    <div class="admin-sections">
+      <button class="admin-section mb-2 me-2"
+              (click)="openVerticallyCentered(content)"> <!-- category fields -->
+        <img src="profile/admin.svg" alt="orders icon">
+        <span>Добавить категорию</span>
+      </button>
+      <button class="admin-section mb-2 me-2"
+              (click)="openVerticallyCentered(content)"> <!-- product fields -->
+        <img src="profile/admin.svg" alt="favorites icon">
+        <span>Добавить товар</span>
+      </button>
+      <button class="admin-section mb-2 me-2"
+              (click)="openVerticallyCentered(content)"> <!-- username to check -->
+        <img src="profile/cart.svg" alt="basket icon">
+        <span>Посмотреть корзину пользователя</span>
+      </button>
+      <button class="admin-section mb-2 me-2"
+              (click)="openVerticallyCentered(content)"> <!-- username to change -->
+        <img src="profile/setting.svg" alt="edit icon">
+        <span>Редактировать профиль пользователя</span>
+      </button>
+    </div>
+  </div>
+
+</div>

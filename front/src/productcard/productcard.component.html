@@ -1,35 +1,35 @@
 <div class="product-card">
-  <a [href]="['/profile']"
+  <a [href]="['product/' + product.slug]"
      class="product-card-link">
   </a>
   <div class="card-top">
-    <img [src]="'productcard/card-photo.webp'"
+    <img [src]="decodeURIComponent(product.image)"
          [alt]="'product photo'"
          class="card-top-img"/>
     <button class="card-top-like"
             (click)="true">
       <img src="productcard/like.svg" alt="like icon">
     </button>
-    <div class="cart-top-discount" *ngIf="true">
-      -10%
+    <div class="cart-top-discount" *ngIf="product.discount != 0">
+      -{{product.discount}}%
     </div>
   </div>
   <div class="card-middle">
     <div class="card-middle-price">
-      <span class="card-middle-price-current">3 200 тг.</span>
-      <del class="card-middle-price-old" *ngIf="true"> 3 520 тг.</del>
+      <span class="card-middle-price-current">{{product.price - (product.price * product.discount)/100}} тг.</span>
+      <del class="card-middle-price-old" *ngIf="product.discount != 0"> {{product.price}} тг.</del>
     </div>
-    <div class="card-middle-count" *ngIf="true">
+    <div class="card-middle-count" *ngIf="product.amount < 500">
       <div class="card-middle-count-value">
-        Осталось 500 шт
+        Осталось {{product.amount}} шт
       </div>
       <div class="card-middle-count-progress">
-        <div class="card-middle-count-progress-fill" style="width: 25%;"></div>
+        <div class="card-middle-count-progress-fill" style="width: {{product.amount/10}}%;"></div>
       </div>
     </div>
     <div class="card-middle-title">
       <span class="card-middle-title-brand">Brand </span>
-      <span class="card-middle-title-name">/ name</span>
+      <span class="card-middle-title-name">/ {{product.name}}</span>
     </div>
   </div>
   <div class="card-bottom">

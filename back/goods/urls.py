@@ -9,10 +9,8 @@ from .views import (
 
 urlpatterns = [
     path("categories/", CategoryListView.as_view()),
-    path("categories/<int:cat_id>/", CategoryDetailsView.as_view()),
-    path("categories/<int:cat_id>/items/", CategoryProductsListView.as_view()),
-    path("items/", ProductListView.as_view()),
-    path("items/<int:prod_id>/", ProductDetailsView.as_view()),
+    path("categories/<slug:cat_slug>/", CategoryDetailsView.as_view()),
+    path("categories/<slug:cat_slug>/products/", CategoryProductsListView.as_view()),
+    path("products/", ProductListView.as_view()),
+    path("products/<int:prod_id>/", ProductDetailsView.as_view()),
 ]
-# catalog/category_slug
-# catalog/item_id

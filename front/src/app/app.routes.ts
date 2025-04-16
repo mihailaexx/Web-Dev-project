@@ -1,12 +1,13 @@
 import {Routes} from '@angular/router';
-import {ShopComponent} from './shop/shop.component';
-import {ProductdetailComponent} from './productdetail/productdetail.component';
-import {OrdersComponent} from './orders/orders.component';
-import {FavoritesComponent} from './favorites/favorites.component';
-import {ProfileComponent} from './profile/profile.component';
-import {BasketComponent} from './basket/basket.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
+import {ShopComponent} from '../shop/shop.component';
+import {ProductdetailComponent} from '../productdetail/productdetail.component';
+import {OrdersComponent} from '../orders/orders.component';
+import {FavoritesComponent} from '../favorites/favorites.component';
+import {ProfileComponent} from '../profile/profile.component';
+import {BasketComponent} from '../basket/basket.component';
+import {LoginComponent} from '../login/login.component';
+import {RegisterComponent} from '../register/register.component';
+import {ProductgridComponent} from '../productgrid/productgrid.component';
 
 export const routes: Routes = [
   {
@@ -15,9 +16,12 @@ export const routes: Routes = [
     title: 'Final project site',
   },
   {
-    path: 'shop/p/:slug/',
+    path: 'product/:slug',
     component: ProductdetailComponent,
-    title: 'Buy :slug',
+  },
+  {
+    path: 'category/:slug',
+    component: ProductgridComponent,
   },
   {
     path: 'profile/orders',

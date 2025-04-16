@@ -1,5 +1,5 @@
 .favorites-page {
-  max-width: calc(89% + 32px);
+  max-width: calc(89% - 32px);
   margin: 0 auto;
   padding: 24px 16px 48px;
 }

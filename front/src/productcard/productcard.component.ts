@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {Product} from '../.interfaces/product';
 
 @Component({
   selector: 'app-productcard',
@@ -8,6 +9,6 @@ import {CommonModule} from '@angular/common';
   styleUrl: './productcard.component.css'
 })
 export class ProductcardComponent {
-
-  protected readonly console = console;
+  @Input() product!: Product;
+  protected readonly decodeURIComponent = decodeURIComponent;
 }

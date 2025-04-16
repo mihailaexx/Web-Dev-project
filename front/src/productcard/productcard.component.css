@@ -1,5 +1,8 @@
 .product-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card-link {
@@ -92,6 +95,8 @@
 
 .card-middle-title {
   font-size: 14px;
+  height: 21px;
+  overflow: hidden;
 }
 
 .card-middle-title-brand {
@@ -103,6 +108,9 @@
 }
 
 .card-bottom {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   margin-top: 4px;
   font-size: 14px;
 }
@@ -124,6 +132,10 @@
 
 .card-bottom-order {
   margin-top: 8px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  z-index: 3;
 }
 
 .card-bottom-order-button {
@@ -134,12 +146,12 @@
   width: 100%;
   gap: 8px;
   padding: 3px 5px 5px;
-  margin-top: 30px;
   border-radius: 12px;
+  border: 2px solid transparent;
   font-size: 14px;
+  line-height: 20px;
   font-weight: 650;
   color: #fff;
-  z-index: 3;
 }
 
 @media (min-width: 1024px) {

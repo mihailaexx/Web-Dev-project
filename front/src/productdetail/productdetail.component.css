@@ -1,0 +1,145 @@
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumbs a {
+  color: #666;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.gallery {
+  flex: 1;
+}
+
+.gallery img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.info {
+  flex: 2;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left-desc {
+  max-width: 60%;
+}
+
+.brand {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.price-box {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, .08);
+  min-width: 220px;
+  text-align: center;
+}
+
+.price {
+  font-size: 28px;
+  color: #e60023;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.buttons {
+  margin: 20px 0;
+}
+
+.buttons button {
+  background-color: #a64bf4;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 5px 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.buttons .buy-now {
+  background-color: #f1e6fd;
+  color: #a64bf4;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.details p {
+  margin: 6px 0;
+}
+
+.reviews {
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.review {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+.review-text {
+  margin-top: 5px;
+}

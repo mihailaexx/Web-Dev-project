@@ -18,14 +18,8 @@
       <div class="header-categories"
            *ngIf="CategoriesoffcanvasService.isCategoriesOpen">
         <ul>
-          <li>
-            <a href="">123</a>
-          </li>
-          <li>
-            <a href="">456</a>
-          </li>
-          <li>
-            <a href="">789</a>
+          <li *ngFor="let category of categories">
+            <a [href]="['category/' + category.slug]">{{category.name}}</a>
           </li>
         </ul>
       </div>
@@ -55,9 +49,7 @@
             </a>
           </li>
           <li>
-            <a [href]="['/profile']"
-               (mouseover)="true"
-               (mouseleave)="true">
+            <a [href]="['/profile']">
               <img src="header/profile.svg" alt="profile icon"/>
               <span>Профиль</span>
             </a>
