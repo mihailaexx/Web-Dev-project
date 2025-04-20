@@ -16,32 +16,40 @@ export const routes: Routes = [
     title: 'Final project site',
   },
   {
-    path: 'product/:slug',
+    path: 'product/:id',
     component: ProductdetailComponent,
+    title: route => {
+      const slug = route.params['slug'];
+      return `Product ${slug}`;
+    }
   },
   {
     path: 'category/:slug',
     component: ProductgridComponent,
+    title: route => {
+      const slug = route.params['slug'];
+      return `Category ${slug}`;
+    }
   },
   {
     path: 'profile/orders',
     component: OrdersComponent,
-    title: 'Orders',
+    title: 'My Orders',
   },
   {
     path: 'profile/favorites',
     component: FavoritesComponent,
-    title: 'Likes',
+    title: 'My Favorites',
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    title: 'Profile Page',
+    title: 'My Profile',
   },
   {
     path: 'profile/basket',
     component: BasketComponent,
-    title: 'Basket',
+    title: 'My Basket',
   },
   {
     path: 'login',

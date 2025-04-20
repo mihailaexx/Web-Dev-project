@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CategoriesoffcanvasService } from './categoriesoffcanvas.service';
+import { CategoriesService } from './categories.service';
 
 describe('CategoriesoffcanvasService', () => {
-  let service: CategoriesoffcanvasService;
+  let service: CategoriesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CategoriesoffcanvasService);
+    service = TestBed.inject(CategoriesService);
   });
 
   it('should be created', () => {

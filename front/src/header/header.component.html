@@ -12,11 +12,11 @@
         <img src="logoWb.svg" alt="logo icon" class="header-bottom-logo"/>
       </a>
       <button class="header-bottom-button" type="button"
-              (click)="CategoriesoffcanvasService.toggleCategories()">
+              (click)="categoriesService.toggleCategories()">
         <img src="header/category.svg" alt="category icon"/>
       </button>
       <div class="header-categories"
-           *ngIf="CategoriesoffcanvasService.isCategoriesOpen">
+           *ngIf="categoriesService.isCategoriesOpen">
         <ul>
           <li *ngFor="let category of categories">
             <a [href]="['category/' + category.slug]">{{category.name}}</a>
@@ -24,7 +24,7 @@
         </ul>
       </div>
       <div id="header-categories-overlay"
-           (click)="CategoriesoffcanvasService.toggleCategories()">
+           (click)="categoriesService.toggleCategories()">
       </div>
       <div class="header-bottom-input-container">
         <input autocomplete="off" class="header-bottom-input"

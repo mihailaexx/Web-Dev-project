@@ -18,12 +18,15 @@
     <form>
       <div class="form-group">
         <label>Название категории</label>
-        <input type="text" id="category-name" name="category-name" class="form-control" placeholder="Название категории">
+        <input type="text" id="category-name"
+               name="category-name" class="form-control"
+               [(ngModel)]="categoryName" [ngModelOptions]="{standalone: true}"/>
       </div>
     </form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-secondary" (click)="saveCategory(); modal.close('Save click')">Save</button>
   </div>
 </ng-template>
 
@@ -35,38 +38,68 @@
     <form>
       <div class="form-group">
         <label>Название продукта</label>
-        <input type="text" id="product-name" name="category-name" class="form-control" placeholder="Название категории">
+        <input type="text" id="product-name"
+               name="category-name" class="form-control"
+               [(ngModel)]="productName" [ngModelOptions]="{standalone: true}"/>
       </div>
       <div class="form-group">
         <label>Описание продукта</label>
-        <input type="text" id="product-description" name="category-name" class="form-control" placeholder="Название категории">
+        <input type="text" id="product-description"
+               name="category-name" class="form-control"
+               [(ngModel)]="productDescription" [ngModelOptions]="{standalone: true}"/>
       </div>
       <div class="form-group">
         <label>Фото продукта</label>
-        <input type="image" id="product-image" name="category-name" class="form-control" placeholder="Название категории" alt="product image">
+        <input type="file" accept=".jpg, .jpeg, .png, .webp"
+               id="product-image" name="category-name"
+               class="form-control"
+               (change)="onFileChange($event)"/>
       </div>
       <div class="form-group">
         <label>Количество продукта</label>
-        <input type="text" id="product-amount" name="category-name" class="form-control" placeholder="Название категории">
+        <input type="number" id="product-amount"
+               name="category-name" class="form-control"
+               [(ngModel)]="productAmount" [ngModelOptions]="{standalone: true}"/>
       </div>
       <div class="form-group">
         <label>Цена продукта</label>
-        <input type="text" id="product-price" name="category-name" class="form-control" placeholder="Название категории">
+        <input type="number" id="product-price"
+               name="category-name" class="form-control"
+               [(ngModel)]="productPrice" [ngModelOptions]="{standalone: true}"/>
       </div>
       <div class="form-group">
-        <label>Скидка продукта</label>
-        <input type="text" id="product-discount" name="category-name" class="form-control" placeholder="Название категории">
+        <label>Скидка продукта в процентах</label>
+        <input type="number" id="product-discount"
+               name="category-name" class="form-control"
+               [(ngModel)]="productDiscount" [ngModelOptions]="{standalone: true}"/>
+      </div>
+      <div class="form-group">
+        <label>Категория продукта</label>
+        <div ngbDropdown>
+          <button type="button" class="btn btn-outline-primary btn-sm" ngbDropdownToggle>
+            {{ productCategory?.name || 'Выберите категорию' }}
+          </button>
+          <div ngbDropdownMenu>
+            <div ngbDropdownItem
+              *ngFor="let category of categories"
+              (click)="selectCategory(category)"
+              class="dropdown-item">
+              {{ category.name }}
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-secondary" (click)="saveProduct(); modal.close('Save click')">Save</button>
   </div>
 </ng-template>
 
-<div class="profile-page">
 
-  <div class="profile-container">
+<div class="profile-page">
+  <div class="profile-container" *ngIf="authService.isAuthenticated()">
     <h1>Профиль пользователя</h1>
     <div class="profile-sections">
       <a class="profile-section"
@@ -92,36 +125,32 @@
       </a>
       <button class="profile-section mb-2 me-2"
               (click)="openVerticallyCentered(content)">
-        <img src="profile/setting.svg" alt="edit icon"> <!-- full name, email, phone, address -->
+        <img src="profile/setting.svg" alt="edit icon"> <!-- full name, email -->
         <span>Редактировать профиль</span>
       </button>
     </div>
   </div>
 
-  <div class="profile-container">
+  <div class="profile-container" *ngIf="authService.isAuthenticated()">
     <h1>Профиль Администратора</h1>
     <div class="admin-sections">
       <button class="admin-section mb-2 me-2"
-              (click)="openVerticallyCentered(content)"> <!-- category fields -->
+              (click)="openVerticallyCentered(category)"> <!-- category fields -->
         <img src="profile/admin.svg" alt="orders icon">
         <span>Добавить категорию</span>
       </button>
       <button class="admin-section mb-2 me-2"
-              (click)="openVerticallyCentered(content)"> <!-- product fields -->
+              (click)="openVerticallyCentered(product)"> <!-- product fields -->
         <img src="profile/admin.svg" alt="favorites icon">
         <span>Добавить товар</span>
       </button>
-      <button class="admin-section mb-2 me-2"
-              (click)="openVerticallyCentered(content)"> <!-- username to check -->
-        <img src="profile/cart.svg" alt="basket icon">
-        <span>Посмотреть корзину пользователя</span>
-      </button>
-      <button class="admin-section mb-2 me-2"
-              (click)="openVerticallyCentered(content)"> <!-- username to change -->
-        <img src="profile/setting.svg" alt="edit icon">
-        <span>Редактировать профиль пользователя</span>
-      </button>
     </div>
+  </div>
+
+  <div class="not-authorized-container" *ngIf="!authService.isAuthenticated()">
+    <h2>Вы не авторизованы</h2>
+    <p>Пожалуйста, войдите в свою учетную запись, чтобы получить доступ к этой странице.</p>
+    <button routerLink="/login">Войти</button>
   </div>
 
 </div>

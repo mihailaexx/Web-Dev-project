@@ -7,8 +7,9 @@
 
 .header {
   padding: 8px 0 16px;
-  background: linear-gradient(#6f01fb -7.07999%, #ff49d7 100%),
-  linear-gradient(#d9d9d9, #d9d9d9);
+  background: linear-gradient(97.26deg, #ed3cca .49%, #df34d2 14.88%, #d02bd9 29.27%,
+  #bf22e1 43.14%, #ae1ae8 57.02%, #9a10f0 70.89%, #8306f7 84.76%, #7c1af8 99.15%),
+  linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
 }
 
 .header-fixed {

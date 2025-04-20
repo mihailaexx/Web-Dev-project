@@ -1,10 +1,10 @@
 <div class="product-card">
-  <a [href]="['product/' + product.slug]"
+  <a [href]="['product/' + product.id]"
      class="product-card-link">
   </a>
   <div class="card-top">
     <img [src]="decodeURIComponent(product.image)"
-         [alt]="'product photo'"
+         [alt]="product.name + ' image'"
          class="card-top-img"/>
     <button class="card-top-like"
             (click)="true">

@@ -1,0 +1,20 @@
+<div class="basket-item">
+  <div class="item-image">
+    <img [src]="item.product.image" [alt]="item.product.name">
+  </div>
+  <div class="item-details">
+    <h3 class="item-name">{{ item.product.name }}</h3>
+    <div class="item-price">{{ item.product.price | currency:'KZ':'symbol-narrow' }}</div>
+    <div class="item-actions">
+      <div class="quantity-control">
+        <button (click)="updateQuantity(item.quantity - 1)" [disabled]="item.quantity <= 1">-</button>
+        <input type="number" [(ngModel)]="item.quantity" min="1" (change)="updateQuantity(item.quantity)">
+        <button (click)="updateQuantity(item.quantity + 1)">+</button>
+      </div>
+      <button class="remove-btn" (click)="removeFromBasket()">Удалить</button>
+    </div>
+  </div>
+  <div class="item-total">
+    <strong>Итого: {{ getTotalPrice() | currency:'KZ':'symbol-narrow' }}</strong>
+  </div>
+</div>

@@ -1,9 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {ProductcardComponent} from '../productcard/productcard.component';
-import {HttpClient} from '@angular/common/http';
-import {Product} from '../.interfaces/product';
 import {BannerService} from '../.services/banner.service';
+import {ProductService} from '../.services/product.service';
 
 @Component({
   selector: 'app-shop',
@@ -15,9 +14,9 @@ import {BannerService} from '../.services/banner.service';
 export class ShopComponent implements OnInit, OnDestroy {
   protected products : any;
 
-  constructor(private http: HttpClient, public bannerService: BannerService) { }
+  constructor(public bannerService: BannerService, private productsService: ProductService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const images : string[] = [
       'banner/1.webp',
       'banner/2.webp',
@@ -28,17 +27,10 @@ export class ShopComponent implements OnInit, OnDestroy {
     ];
     const interval : number = 10000;
     this.bannerService.init(images, interval);
-
-    this.getProducts();
+    this.products = await this.productsService.getProducts();
   }
 
   ngOnDestroy() {
     this.bannerService.ngOnDestroy();
-  }
-
-  getProducts() {
-    this.http.get<Product[]>('http://localhost:8000/catalog/products/').subscribe((response: Product[]) => {
-      this.products = response;
-    });
   }
 }

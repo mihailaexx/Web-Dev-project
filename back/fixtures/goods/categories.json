@@ -1,6 +1,0 @@
-[
-    {"model": "goods.category", "pk": 1, "fields": {"name": "Обувь", "slug": "obuv"}},
-    {"model": "goods.category", "pk": 8, "fields": {"name": "Книги", "slug": "knigi"}},
-    {"model": "goods.category", "pk": 9, "fields": {"name": "Женщинам", "slug": "zhenshinam"}},
-    {"model": "goods.category", "pk": 10, "fields": {"name": "Мужчинам", "slug": "muzhchinam"}}
-  ]
