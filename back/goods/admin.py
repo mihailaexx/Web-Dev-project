@@ -12,7 +12,6 @@ class CategoryAdmin(admin.ModelAdmin):
         "id",
         "name",
     )
-    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(Product)
@@ -33,4 +32,3 @@ class ProductAdmin(admin.ModelAdmin):
         "price",
         "discount",
     )
-    prepopulated_fields = {"slug": ("name",)}

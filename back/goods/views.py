@@ -1,8 +1,11 @@
-from .models import Product, Category
-from .serializers import ProductSerializer, CategorySerializer
+from .models import Product, Category, Review
+from .serializers import ProductSerializer, CategorySerializer, ReviewSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 
 class CategoryListView(APIView):
@@ -60,6 +63,8 @@ class CategoryProductsListView(APIView):
 
 
 class ProductListView(APIView):
+    parser_classes = [MultiPartParser, FormParser]
+
     def get(self, request):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
@@ -97,3 +102,37 @@ class ProductDetailsView(APIView):
         product = self.get_object(prod_id)
         product.delete()
         return Response({"message": "Category was deleted"})
+
+
+class ReviewAPIView(APIView):
+    def get(self, request, product_id):
+        reviews = Review.objects.filter(product_id=product_id).order_by("-created_at")
+        serializer = ReviewSerializer(reviews, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, product_id):
+        serializer = ReviewSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user, product_id=product_id)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, product_id, review_id):
+        review = Review.objects.filter(
+            pk=review_id, product_id=product_id, user=request.user
+        ).first()
+        if not review:
+            return Response(
+                {"error": "Not found or no permission"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        review.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def user_reviews(request):
+    reviews = Review.objects.filter(user=request.user).order_by("-created_at")
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)
