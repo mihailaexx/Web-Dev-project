@@ -24,6 +24,7 @@ class ProductAdmin(admin.ModelAdmin):
         "discount",
         "category",
     )
+    list_filter = ("category",)
     search_fields = ("name",)
     list_ordering = (
         "id",

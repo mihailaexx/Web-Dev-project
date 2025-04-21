@@ -5,10 +5,12 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 
 class CategoryListView(APIView):
+    permission_classes = [AllowAny]
+
     def get(self, request):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True)
@@ -23,6 +25,8 @@ class CategoryListView(APIView):
 
 
 class CategoryDetailsView(APIView):
+    permission_classes = [AllowAny]
+
     def get_object(self, cat_slug):
         try:
             return Category.objects.get(slug=cat_slug)
@@ -49,6 +53,8 @@ class CategoryDetailsView(APIView):
 
 
 class CategoryProductsListView(APIView):
+    permission_classes = [AllowAny]
+
     def get_object(self, cat_slug):
         try:
             return Category.objects.get(slug=cat_slug)
@@ -63,6 +69,7 @@ class CategoryProductsListView(APIView):
 
 
 class ProductListView(APIView):
+    permission_classes = [AllowAny]
     parser_classes = [MultiPartParser, FormParser]
 
     def get(self, request):
@@ -79,6 +86,8 @@ class ProductListView(APIView):
 
 
 class ProductDetailsView(APIView):
+    permission_classes = [AllowAny]
+
     def get_object(self, prod_id):
         try:
             return Product.objects.get(pk=prod_id)
@@ -105,6 +114,8 @@ class ProductDetailsView(APIView):
 
 
 class ReviewAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, product_id):
         reviews = Review.objects.filter(product_id=product_id).order_by("-created_at")
         serializer = ReviewSerializer(reviews, many=True)
