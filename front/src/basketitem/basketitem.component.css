@@ -38,6 +38,10 @@
   color: #555;
 }
 
+.item-price del {
+  font-size: 14px;
+}
+
 .item-actions {
   display: flex;
   align-items: center;
@@ -61,6 +65,22 @@
 
 .quantity-control button:hover {
   background-color: #e0e0e0;
+}
+
+.basket-item-loading {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.basket-item-loading p {
+  color: #666;
+  font-style: italic;
 }
 
 .quantity-control input {
@@ -87,6 +107,21 @@
 
 .item-total {
   font-size: 18px;
-  min-width: 120px;
+  width: 200px;
+  min-width: 200px;
   text-align: right;
+  padding-left: 10px;
 }
+
+@media (max-width: 768px) {
+  .basket-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.item-total strong {
+  display: inline-block;
+  font-weight: 600;
+}
+

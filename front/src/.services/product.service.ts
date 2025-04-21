@@ -14,14 +14,29 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   async getProducts() {
-    return await firstValueFrom(this.http.get<Product[]>(`${this.baseUrl}/products/`));
+    try {
+      return await firstValueFrom(this.http.get<Product[]>(`${this.baseUrl}/products/`));
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      throw error;
+    }
   }
 
   async getProductsForCategory(category: string) {
-    return await firstValueFrom(this.http.get<Product[]>(`${this.baseUrl}/categories/${category}/products/`));
+    try {
+      return await firstValueFrom(this.http.get<Product[]>(`${this.baseUrl}/categories/${category}/products/`));
+    } catch (error) {
+      console.error(`Error fetching products for category ${category}:`, error);
+      throw error;
+    }
   }
 
   async getProduct(id: string) {
-    return await firstValueFrom(this.http.get<Product>(`${this.baseUrl}/products/${id}/`));
+    try {
+      return await firstValueFrom(this.http.get<Product>(`${this.baseUrl}/products/${id}/`));
+    } catch (error) {
+      console.error(`Failed to fetch product with ID ${id}:`, error);
+      throw error;
+    }
   }
 }

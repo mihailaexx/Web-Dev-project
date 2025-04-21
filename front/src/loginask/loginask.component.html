@@ -1,0 +1,5 @@
+<div class="not-authorized-container" *ngIf="!authService.isAuthenticated()">
+  <h2>Вы не авторизованы</h2>
+  <p>Пожалуйста, войдите в свою учетную запись, чтобы получить доступ к этой странице.</p>
+  <button routerLink="/login">Войти</button>
+</div>

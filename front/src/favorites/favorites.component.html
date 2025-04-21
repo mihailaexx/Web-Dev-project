@@ -1,4 +1,4 @@
-<div class="favorites-page">
+<div class="favorites-page" *ngIf="authService.isAuthenticated()">
   <div class="favorites-header">
     <h1>Избранное</h1>
     <div class="favorites-search">
@@ -12,3 +12,5 @@
     <app-productcard *ngFor="let favorite of favorites" [product]="favorite"></app-productcard>
   </div>
 </div>
+
+<app-loginask></app-loginask>

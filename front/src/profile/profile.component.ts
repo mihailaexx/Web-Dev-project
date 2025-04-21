@@ -7,10 +7,11 @@ import { CategoriesService } from '../.services/categories.service';
 import { CommonModule } from '@angular/common';
 import { Category } from '../.interfaces/category';
 import {AuthService} from '../auth/auth.service';
+import {LoginaskComponent} from '../loginask/loginask.component';
 
 @Component({
   selector: 'app-profile',
-  imports: [CommonModule, RouterLink, FormsModule, NgbDropdownModule],
+  imports: [CommonModule, RouterLink, FormsModule, NgbDropdownModule, LoginaskComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

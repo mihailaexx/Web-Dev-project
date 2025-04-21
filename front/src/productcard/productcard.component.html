@@ -34,15 +34,16 @@
   </div>
   <div class="card-bottom">
     <div class="card-bottom-raiting">
-      <span class="card-bottom-raiting-stars">4.7</span>
-      <span class="card-bottom-raiting-count">• 35000 оценок</span>
+      <span class="card-bottom-raiting-stars">{{ avgRating }}</span>
+      <span class="card-bottom-raiting-count">• {{ reviewsCount }} оценок</span>
     </div>
     <div class="card-bottom-order">
       <button class="card-bottom-order-button"
-              (click)="true">
+              (click)="cartService.addToBasket(product.id)">
         <img src="productcard/cart.svg" alt="order icon">
         <span>Купить</span>
       </button>
     </div>
   </div>
 </div>
+

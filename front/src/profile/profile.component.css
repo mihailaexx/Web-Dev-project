@@ -1,7 +1,6 @@
 .profile-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .profile-container {
@@ -65,32 +64,3 @@ button {
 button:hover {
   color: #a73afd;
 }
-
-.not-authorized-container {
-  text-align: center;
-  padding: 40px 0;
-}
-
-.not-authorized-container h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.not-authorized-container p {
-  margin-bottom: 20px;
-  color: #666;
-}
-
-.not-authorized-container button {
-  padding: 10px 20px;
-  background-color: #3f51b5;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.not-authorized-container button:hover {
-  background-color: #303f9f;
-}
-

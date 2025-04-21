@@ -1,24 +1,23 @@
 <div id="main">
-  <main class="main-container">
+  <div class="main-container">
     <div class="basket-header" *ngIf="basketItems.length > 0">
       <h1>Корзина покупок</h1>
     </div>
     <div class="basket-items" *ngIf="basketItems.length > 0">
       <app-basketitem *ngFor="let item of basketItems" [item]="item"></app-basketitem>
       <div class="cart-total">
-        <div class="total-line">
-          <span>Итого:</span>
-          <span>{{ totalPrice | currency:'RUB':'symbol-narrow' }}</span>
-        </div>
         <button class="checkout-button">Оформить заказ</button>
       </div>
     </div>
 
 
-    <div class="empty-basket" *ngIf="basketItems.length === 0">
+    <div class="empty-basket" *ngIf="basketItems.length === 0 && authService.isAuthenticated()">
       <h2>Ваша корзина пуста</h2>
       <p>Добавьте товары из каталога, чтобы сделать заказ</p>
       <button routerLink="/">Перейти в каталог</button>
     </div>
-  </main>
+
+    <app-loginask></app-loginask>
+  </div>
+
 </div>

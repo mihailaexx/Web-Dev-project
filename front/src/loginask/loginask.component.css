@@ -1,0 +1,27 @@
+.empty-basket {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.empty-basket h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.empty-basket p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.empty-basket button {
+  padding: 10px 20px;
+  background-color: #a73afd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.empty-basket button:hover {
+  background-color: #b65aff;
+}

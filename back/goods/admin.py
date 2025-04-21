@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from goods.models import Category, Product
+from goods.models import Category, Product, Review
 
 
 @admin.register(Category)
@@ -32,4 +32,17 @@ class ProductAdmin(admin.ModelAdmin):
         "amount",
         "price",
         "discount",
+    )
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ("user", "product", "rating")
+    list_filter = ("product",)
+    search_fields = ("user__username", "product__name")
+    list_ordering = (
+        "id",
+        "user",
+        "product",
+        "rating",
     )

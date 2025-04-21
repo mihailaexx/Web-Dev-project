@@ -97,6 +97,7 @@
   font-size: 14px;
   height: 21px;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-middle-title-brand {
@@ -152,6 +153,10 @@
   line-height: 20px;
   font-weight: 650;
   color: #fff;
+}
+
+.card-bottom-order-button:hover {
+  background-color: #b65aff;
 }
 
 @media (min-width: 1024px) {

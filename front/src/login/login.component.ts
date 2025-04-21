@@ -5,12 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-login',
   imports: [FormsModule],
-  template: `
-    <h2>Вход</h2>
-    <input [(ngModel)]="username" placeholder="Логин">
-    <input [(ngModel)]="password" type="password" placeholder="Пароль">
-    <button (click)="login()">Войти</button>
-  `
+  templateUrl: './login.component.html',
 })
 export class LoginComponent {
   username = '';
@@ -19,6 +14,7 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   login() {
+    localStorage.clear();
     this.authService.login(this.username, this.password);
   }
 }

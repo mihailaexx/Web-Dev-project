@@ -1,20 +1,29 @@
-<div class="basket-item">
+<div class="basket-item" *ngIf="!isLoading && product; else loadingTemplate">
   <div class="item-image">
-    <img [src]="item.product.image" [alt]="item.product.name">
+    <img [src]="product.image" [alt]="product.name">
   </div>
   <div class="item-details">
-    <h3 class="item-name">{{ item.product.name }}</h3>
-    <div class="item-price">{{ item.product.price | currency:'KZ':'symbol-narrow' }}</div>
+    <h3 class="item-name">{{ product.name }}</h3>
+    <div class="item-price">
+      {{ (product.price - (product.price * product.discount)/100) | currency:'KZT':'symbol-narrow' }}
+      <del *ngIf="product.discount!=0">{{ product.price | currency:'KZT':'symbol-narrow' }}</del>
+    </div>
     <div class="item-actions">
       <div class="quantity-control">
         <button (click)="updateQuantity(item.quantity - 1)" [disabled]="item.quantity <= 1">-</button>
         <input type="number" [(ngModel)]="item.quantity" min="1" (change)="updateQuantity(item.quantity)">
         <button (click)="updateQuantity(item.quantity + 1)">+</button>
       </div>
-      <button class="remove-btn" (click)="removeFromBasket()">Удалить</button>
+      <button class="remove-btn" (click)="cartService.removeFromBasket(product.id)">Удалить</button>
     </div>
   </div>
   <div class="item-total">
-    <strong>Итого: {{ getTotalPrice() | currency:'KZ':'symbol-narrow' }}</strong>
+    <strong>Итого: {{ getTotalPrice() | currency:'KZT':'symbol-narrow' }}</strong>
   </div>
 </div>
+
+<ng-template #loadingTemplate>
+  <div class="basket-item-loading">
+    <p>Загрузка товара...</p>
+  </div>
+</ng-template>
